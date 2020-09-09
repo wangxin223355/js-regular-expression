@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置
+      {
+        const str = '0123'
+        const reg = /123/
+        let n = str.search(reg)
+        console.log(n) // 1 返回的是匹配的起始位置
+      }
+
+      // search 方法可使用字符串作为参
+      {
+        const str = '0123'
+        const reg = str.search('123')
+        console.log(reg) // 1
+      }
+    </script>
+  </body>
+</html>

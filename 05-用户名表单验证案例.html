@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .defaule {
+        color: #cccccc;
+      }
+      .right {
+        color: greenyellow;
+      }
+      .wrong {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="text" class="uname" /><span class="defaule">请输入内容</span>
+    <script>
+      // 提示用户名输入是否合法
+      const reg = /^[a-zA-Z0-9_-]{6,16}$/
+      // 表单失去焦点就开始验证
+      const uname = document.querySelector('.uname')
+      const span = document.querySelector('span')
+      uname.onblur = function () {
+        if (reg.test(this.value)) {
+          span.className = 'right'
+          span.innerHTML = '用户名输入正确'
+        } else {
+          span.className = 'wrong'
+          span.innerHTML = '用户名输入不正确'
+        }
+      }
+    </script>
+  </body>
+</html>

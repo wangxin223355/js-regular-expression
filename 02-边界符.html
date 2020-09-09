@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        // 边界符 ^ 开头 $ 结尾
-        var rg = /abc/; // 里面不需要加引号
-        // /abc/只要包含有abc这个字符串的都是true
-        console.log(rg.test('abc')); // true
-        console.log(rg.test('abcdefg')); // true
+      // 边界符
+      // ^ 开头 $ 结尾
+      const rg = /abc/
+      // /abc/ 只要包含有abc这个字符串的都是true
+      console.log(rg.test('abc')) // true
+      console.log(rg.test('abcdefg')) // true
 
-        var reg = /^abc/; // 以abc开头
-        console.log(reg.test('abcdefg')); // true
+      {
+        const reg = /^abc/ // 以abc开头
+        console.log(reg.test('abcdefg')) // true
+        console.log(reg.test('cbcdefg')) // false
+      }
 
-        var reg1 = /^abc$/; //精确匹配 必须是abc字符串
-        console.log(reg1.test('abcdefg')) // false
+      {
+        const reg = /^abc$/ //精确匹配 必须是abc字符串
+        console.log(reg.test('abc')) // true
+        console.log(reg.test('abcdefg')) // false
+      }
     </script>
-</body>
-
+  </body>
 </html>

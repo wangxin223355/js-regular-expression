@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        // 1.利用RegExp对象来创建正则表达式
-        var regexp = new RegExp(/123/);
-        console.log(regexp);
+      // 创建
+      // 1.利用 RegExp 构造函数来创建正则表达式
+      {
+        const regexp = new RegExp(/123/)
+        console.log(regexp) // /123/
+      }
 
-        // 2.利用字面量创建
-        var rg = /123/;
-        // 3.test方法测试字符串是否符合正则表达式的规则
-        console.log(rg.test(123)); // true
-        console.log(rg.test('abc')); // false
+      // 2.利用字面量创建（简便、推荐）
+      const rg = /123/
+
+      // 检测
+      // test() 方法测试字符串是否符合正则表达式的规则
+      console.log(rg.test('123')) // true
+      console.log(rg.test('abc')) // false
+      // 可以不用设置正则表达式的变量，以上两行代码可以合并为一行
+      console.log(/123/.test('123')) // true
     </script>
-</body>
-
+  </body>
 </html>

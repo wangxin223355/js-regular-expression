@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        //  中括号 字符集合 匹配方括号中的任意字符
-        var reg1 = /^[abc]$/; // a||b||c
+      // 中括号 字符集合 匹配方括号中的任意字符
+      const reg1 = /^[abc]$/ // a||b||c
 
-        // 大括号 量词符 里面表示重复次数
-        var reg2 = /^[abc]{3}$/;
-        var reg3 = /^abc{3}$/; //只是c重复三次 abccc
+      // 大括号 量词符 里面表示重复次数
+      const reg2 = /^[abc]{3}$/
 
-        // 小括号 表示优先级
-        var reg4 = /^(abc){3}$/; //先(abc) 再重复三次
+      // 不加括号 只是让前一个字符重复匹配
+      const reg3 = /^abc{3}$/ // 只是让 c 重复三次
+      console.log(reg3.test('abc')) // false
+      console.log(reg3.test('abcabcabc')) // false
+      console.log(reg3.test('abccc')) // true
+
+      // 小括号 表示优先级
+      const reg4 = /^(abc){3}$/ // 先 (abc) 再重复三次
+      console.log(reg4.test('abc')) // false
+      console.log(reg4.test('abcabcabc')) // true
+      console.log(reg4.test('abccc')) // false
     </script>
-</body>
-
+  </body>
 </html>
