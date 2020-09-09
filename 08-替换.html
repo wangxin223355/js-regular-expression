@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 过滤敏感词 -->
+    <textarea name="" id="message" cols="30" rows="10"></textarea>
+    <button>提交</button>
+    <div></div>
+    <script>
+        // 替换 replace 只能替换第一个满足条件的字符串
+        // 参数 
+        // g 全局匹配 i 忽略大小写 gi全局匹配+忽略大小写
+        // var str = 'wangxin和cxk';
+        // var newStr = str.replace('wangxin', '66666');
+        // var newStr = str.replace(/cxk/, '66666')
+        // console.log(newStr);
+        var message = document.querySelector('#message');
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function () {
+            div.innerHTML = message.value.replace(/鸡巴|傻逼/g, '**');
+        }
+    </script>
+</body>
+
+</html>
