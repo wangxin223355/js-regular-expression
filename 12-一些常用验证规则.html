@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 带有小数 */
+      function isDecimal(str) {
+        const RegExp = /^\d+\.\d+$/ // \. 匹配 .
+        return RegExp.test(str)
+      }
+
+      /* 中文名称 */
+      function isChina(str) {
+        const RegExp = /^[\u4E00-\u9FA5]{2,4}$/
+        return RegExp.test(str)
+      }
+
+      /* 8位数字 */
+      function isNumber(str) {
+        const RegExp = /^\d{8}$/
+        return RegExp.test(str)
+      }
+
+      /* 手机号码 */
+      function isTelCode(str) {
+        const RegExp = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/
+        return RegExp.test(str)
+      }
+
+      /* 邮箱地址 */
+      function isEmail(str) {
+        const RegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        return RegExp.test(str)
+      }
+    </script>
+  </body>
+</html>

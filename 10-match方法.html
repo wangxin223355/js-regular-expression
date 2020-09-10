@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+      // 这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。如果 regexp 没有标志 g，
+      // 那么 match() 方法就只能在 stringObject 中执行一次匹配。
+      {
+        const str = '1234 0123'
+        const n = str.match(/123/g)
+        console.log(n) // ["123", "123"]
+      }
+    </script>
+  </body>
+</html>
